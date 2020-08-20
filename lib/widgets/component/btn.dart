@@ -21,11 +21,13 @@ class wsxc_btn extends StatelessWidget {
           color: Colors.blue[500],
           border: Border.all(color: Colors.blue[500], width: 1),
         ),
-        child: Text(
-          title,
-          style: TextStyle(
-            color: titleColor,
-            fontSize: titleFont,
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyle(
+              color: titleColor,
+              fontSize: titleFont,
+            ),
           ),
         ),
       ),
