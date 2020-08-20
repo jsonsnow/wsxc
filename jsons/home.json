@@ -1,0 +1,19 @@
+{
+    "photo_search_check":true,
+    "shop":"$shop",
+    "is_vip":true,
+    "increasePriceConfig":{},
+    "banner":"https://xcimg.szwego.com/20190821/i1566367148_4582_0.jpg",
+    "goods_list":"$[]goods",
+    "share_title":"快来我的触店看新品看款搜款、分享9图和小视频",  
+    "left_day":15,
+    "show_tips":true,
+    "online":true,
+    "album_qrcode":"https://xcimg.szwego.com/code_C201903020936258050206258_20200706180203.png",
+    "search_acceleration":true,
+    "share":"$share",
+    "showCart":true,
+    "default_watermark":[],
+    "user":{},
+    "recentOrder":{}
+}
