@@ -12,13 +12,13 @@ class HomeCellUserWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 18, top: 8),
+          padding: EdgeInsets.only(left: 18),
           child: gmAvatar(
             goods.user_icon,
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 15),
+          padding: EdgeInsets.only(left: 15, top: 3),
           child: Row(
             children: <Widget>[
               Text(
@@ -27,7 +27,22 @@ class HomeCellUserWidget extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 24),
-                child: Text(goods.share_time),
+                child: Row(
+                  children: [
+                    Text(goods.share_time),
+                    goods.hasFrom()
+                        ? Padding(
+                            padding: EdgeInsets.only(left: 15),
+                            child: Row(
+                              children: [
+                                Text(goods.fromText() ?? ""),
+                                Icon(Icons.lock)
+                              ],
+                            ),
+                          )
+                        : null
+                  ],
+                ),
               )
             ],
           ),

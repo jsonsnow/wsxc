@@ -40,6 +40,18 @@ Goods _$GoodsFromJson(Map<String, dynamic> json) {
     ..addedWatermarks = json['addedWatermarks'] as List
     ..negativeStock = json['negativeStock'] as bool
     ..subimgs = json['subimgs'] as List
+    ..priceArr = (json['priceArr'] as List)
+        ?.map(
+            (e) => e == null ? null : Price.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..noteArr = (json['noteArr'] as List)
+        ?.map((e) =>
+            e == null ? null : GoodsNote.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..tags = (json['tags'] as List)
+        ?.map((e) =>
+            e == null ? null : GoodTags.fromJson(e as Map<String, dynamic>))
+        ?.toList()
     ..time = json['time'] as String
     ..imgsSrc = json['imgsSrc'] as List
     ..old_time = json['old_time'] as String;
@@ -78,6 +90,9 @@ Map<String, dynamic> _$GoodsToJson(Goods instance) => <String, dynamic>{
       'addedWatermarks': instance.addedWatermarks,
       'negativeStock': instance.negativeStock,
       'subimgs': instance.subimgs,
+      'priceArr': instance.priceArr,
+      'noteArr': instance.noteArr,
+      'tags': instance.tags,
       'time': instance.time,
       'imgsSrc': instance.imgsSrc,
       'old_time': instance.old_time

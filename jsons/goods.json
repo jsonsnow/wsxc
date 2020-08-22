@@ -58,6 +58,9 @@
     "subimgs":[
 
     ],
+    "priceArr":"$[]price",
+    "noteArr":"$[]goodsNote",
+    "tags":"$[]goodTags",
     "time":"3秒前",
     "imgsSrc":[
         "https://xcimg.szwego.com/20200819/a1597840871238_2367.jpg?imageView2/2/format/jpg/q/100",

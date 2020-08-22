@@ -13,7 +13,7 @@ class _HomeCellState extends State<HomeCell> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(top: 8),
+        padding: EdgeInsets.only(top: 8, left: 24),
         child: Column(
           children: [],
         ));
