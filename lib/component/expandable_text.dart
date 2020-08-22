@@ -6,7 +6,11 @@ class ExpandabelText extends StatefulWidget {
   final TextStyle style;
   final bool expand;
   const ExpandabelText(
-      {Key key, this.text, this.maxLinex, this.style, this.expand})
+      {Key key,
+      @required this.text,
+      this.maxLinex,
+      this.style = const TextStyle(color: Colors.black, fontSize: 11),
+      this.expand = false})
       : super(key: key);
 
   @override

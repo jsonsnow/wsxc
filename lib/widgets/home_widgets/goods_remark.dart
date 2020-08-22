@@ -9,28 +9,79 @@ class GoodsRemarkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 8),
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: [
-              Divider(),
-              Text(
-                '商品属性',
-                style: TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-              Divider()
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 18, bottom: 18),
-          )
-        ],
-      ),
+      child: Column(children: _build()),
     );
   }
 
+  List<Widget> _build() {
+    var chirldrens = <Widget>[];
+    var divider = Row(
+      children: [
+        Divider(),
+        Text(
+          '商品属性',
+          style: TextStyle(color: Colors.grey, fontSize: 12),
+        ),
+        Divider()
+      ],
+    );
+
+    chirldrens.add(divider);
+    if (goods.mark_code.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 18),
+          child: _buildSearchCode(),
+        ),
+      );
+    }
+    if (goods.tags.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 18),
+          child: _buildTags(),
+        ),
+      );
+    }
+    if (goods.priceArr.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 8),
+          child: _buildPrices(),
+        ),
+      );
+    }
+    if (goods.formats.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 18),
+          child: _buildFormats(),
+        ),
+      );
+    }
+
+    if (goods.colors.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 18),
+          child: _buildColors(),
+        ),
+      );
+    }
+
+    if (goods.noteArr.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 5, bottom: 8),
+          child: _buildNotes(),
+        ),
+      );
+    }
+    return chirldrens;
+  }
+
   Widget _buildSearchCode() {
-    DefaultTextStyle(
+    return DefaultTextStyle(
       style: TextStyle(color: Colors.grey, fontSize: 12),
       child: Row(
         children: [

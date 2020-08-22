@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wsxc/common/global.dart';
+import 'package:wsxc/models/index.dart';
+import 'package:wsxc/routes/home.dart';
 
 void main() {
-  runApp(MyApp());
+  Global.init().then((value) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +29,9 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: <String, WidgetBuilder>{
+        '/': (context) => HomeRouter(),
+      },
     );
   }
 }

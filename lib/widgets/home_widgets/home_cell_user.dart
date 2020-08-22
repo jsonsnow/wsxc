@@ -3,7 +3,7 @@ import 'package:wsxc/common/funs.dart';
 import 'package:wsxc/models/index.dart';
 
 class HomeCellUserWidget extends StatelessWidget {
-  HomeCellUserWidget({Key key, this.goods}) : super(key: key);
+  HomeCellUserWidget({Key key, @required this.goods}) : super(key: key);
   final Goods goods;
 
   @override
