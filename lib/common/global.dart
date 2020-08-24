@@ -18,7 +18,14 @@ class Global {
       } catch (e) {
         debugPrint(e);
       }
+    } else {
+      profile.token =
+          'OUM1NzQwMzdCQUQ0ODc2REM1RTdDRDBFMEIxMzZDRTg1RDY1RjRGMkNDRkNGMDMyRkYxN0U1OEYwODRCOTVDNEIzMzRBNDNGNTEyREE4ODczRjkzNThCN0JDMkY5MkFF';
+      Global.saveProfile();
     }
-    //Net.init();
+    Net.init();
   }
+
+  static saveProfile() =>
+      _preferences.setString('profile', jsonEncode(profile.toJson()));
 }
