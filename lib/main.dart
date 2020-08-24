@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wsxc/common/global.dart';
 import 'package:wsxc/models/index.dart';
-import 'package:wsxc/routes/home.dart';
+import 'package:wsxc/routes/index.dart';
+import 'package:wsxc/routes/tab_bar.dart';
 
 void main() {
   Global.init().then((value) => runApp(MyApp()));
@@ -30,7 +31,12 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: <String, WidgetBuilder>{
-        '/': (context) => HomeRouter(),
+        '/': (context) => TabBarCtr(),
+        'home': (context) => HomeRouter(),
+        'followed': (context) => FollowedRouter(),
+        'order': (context) => OrderRouter(),
+        'catch': (context) => CatchPicRouter(),
+        'user': (context) => UserRouter()
       },
     );
   }
