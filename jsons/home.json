@@ -1,43 +1,5 @@
 {
-    "autoIncreasePriceConfig":{
-        "isHaveConfig":true,
-        "type":0,
-        "value":3
-    },
-    "banner":"https://xcimg.szwego.com/album_bg.png",
-    "defaultWatermark":[
-        {
-            "watermark":[
-                {
-                    "color":"",
-                    "content":"https://xcimg.szwego.com/20200818/i1597733526_9905_0.jpg",
-                    "position":3,
-                    "type":2
-                },
-                {
-                    "color":"",
-                    "content":"",
-                    "position":2,
-                    "type":6
-                }
-            ],
-            "wm_id":"WM202003232018367430009628"
-        }
-    ],
-    "desc":"在家呢才能出门吃饭可可粉进出口处没法出门拿出决策参考课程分开分开分开课程分开分开课程此刻反馈反馈开发开放开发贷款开发开放开发贷款快点快点快点",
-    "icon":"https://xcimg.szwego.com/aKiaOrPeib9y8mpXzZpE9JeQ5JXnEU06vffe0bN51BJK0KRK0tr195e9DNnJzgbuo6TwV25Yd6ArWz2jHNRLWFJw",
-    "id":"A201903151752509130000263",
-    "isHdSwitcher":true,
-    "isOpenImageSearch":true,
-    "isSearchAcceleration":true,
-    "isShowCart":true,
-    "isShowTips":true,
-    "isTourist":false,
-    "isWatermark":true,
-    "name":"亮要你自己看着",
-    "online":true,
-    "qrcode":"https://xcimg.szwego.com/code_C201903151752509130000542_20200721153807.png",
-    "userType":"b",
-    "vipLeftDay":25,
-    "vipState":1
+    "album": "$album",
+    "items": "$[]goods",
+    "pagination":
 }
