@@ -33,7 +33,7 @@ class Net {
       num timestamp}) async {
     print('start get home');
     var r = await dio.get<Map<String, dynamic>>("album/moments");
-    print('home data: $r');
-    return r.data as Map<String, dynamic>;
+    // print('home data: $r');
+    return r.data;
   }
 }

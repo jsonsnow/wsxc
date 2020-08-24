@@ -26,17 +26,25 @@ class _HomeRouterState extends State<HomeRouter> {
   }
 
   Widget _buildBody() {
-    fetchHomeData(false);
+    //fetchHomeData(false);
     return InfiniteListView<Goods>(
         onRetrieveData: (int page, List<Goods> items, bool refresh) async {
-      return true;
+      var goods = await fetchHomeData(refresh);
+      print('goods:$goods');
+      items.addAll(goods);
+      return goods.length > 0 ? true : false;
     }, itemBuilder: (List list, int index, BuildContext ctx) {
       return HomeCell(list[index]);
     });
   }
 
-  fetchHomeData(bool refresh) async {
+  Future<List<Goods>> fetchHomeData(bool refresh) async {
     var r = await Net(context).home();
-    var items = r['items'] as List<dynamic>;
+    //print('result :$r');
+    var items = r['result']['items'] as List;
+    //print('items $items');
+    return items.map((e) {
+      return Goods.fromJson(e);
+    }).toList();
   }
 }

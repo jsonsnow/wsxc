@@ -24,26 +24,24 @@ class _HomeCellState extends State<HomeCell> {
         padding: EdgeInsets.only(top: 8, left: 24),
         child: Column(
           children: [
-            HomeCellUserWidget(
-              goods: goods,
-            ),
-            Container(
-              padding: EdgeInsets.fromLTRB(120, 20, 20, 15),
-              child: Column(
-                children: [
-                  ExpandabelText(
-                    text: goods.title ?? '',
-                    maxLinex: 5,
-                  ),
-                  goods.imgs.length > 0
-                      ? CLFlow(
-                          count: goods.imgs.length,
-                          children: goods.imgs.map((e) => gmAvatar(e)))
-                      : null,
-                  GoodsRemarkWidget(goods: goods)
-                ],
-              ),
-            )
+            HomeCellUserWidget(goods: goods),
+            // Container(
+            //   padding: EdgeInsets.fromLTRB(120, 20, 20, 15),
+            //   child: Column(
+            //     children: [
+            //       ExpandabelText(
+            //         text: goods.title ?? '',
+            //         maxLinex: 5,
+            //       ),
+            //       goods.imgs.length > 0
+            //           ? CLFlow(
+            //               count: goods.imgs.length,
+            //               children: goods.imgs.map((e) => gmAvatar(e)))
+            //           : null,
+            //       GoodsRemarkWidget(goods: goods)
+            //     ],
+            //   ),
+            // )
           ],
         ));
   }
