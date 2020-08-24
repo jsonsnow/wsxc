@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CatchPicRouter extends StatefulWidget {
@@ -10,12 +11,14 @@ class CatchPicRouter extends StatefulWidget {
 class _CatchPicRouterState extends State<CatchPicRouter> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('抓图'),
-      ),
-      body: Center(
-        child: Text('抓图'),
+    return Material(
+      child: CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text('抓图'),
+        ),
+        child: Center(
+          child: Text('抓图'),
+        ),
       ),
     );
   }

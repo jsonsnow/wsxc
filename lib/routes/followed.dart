@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FollowedRouter extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
+  _FollowedRouterState createState() {
     return _FollowedRouterState();
   }
 }
@@ -10,12 +11,14 @@ class FollowedRouter extends StatefulWidget {
 class _FollowedRouterState extends State<FollowedRouter> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('关注'),
-      ),
-      body: Center(
-        child: Text('关注'),
+    return Material(
+      child: CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text('关注'),
+        ),
+        child: Center(
+          child: Text('关注'),
+        ),
       ),
     );
   }

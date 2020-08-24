@@ -1,4 +1,5 @@
 import 'package:flukit/flukit.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wsxc/models/index.dart';
 import 'package:wsxc/widgets/home_widgets/home_cell.dart';
@@ -13,12 +14,13 @@ class HomeRouter extends StatefulWidget {
 class _HomeRouterState extends State<HomeRouter> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('首页'),
+    return Material(
+      child: CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text('首页'),
+        ),
+        child: _buildBody(),
       ),
-      body: _buildBody(),
-      bottomNavigationBar: ,
     );
   }
 

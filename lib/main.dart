@@ -31,13 +31,13 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: <String, WidgetBuilder>{
-        '/': (context) => TabBarCtr(),
         'home': (context) => HomeRouter(),
         'followed': (context) => FollowedRouter(),
         'order': (context) => OrderRouter(),
         'catch': (context) => CatchPicRouter(),
         'user': (context) => UserRouter()
       },
+      home: TabBarCtr(),
     );
   }
 }

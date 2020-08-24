@@ -19,6 +19,6 @@ class Global {
         debugPrint(e);
       }
     }
-    Net.init();
+    //Net.init();
   }
 }
