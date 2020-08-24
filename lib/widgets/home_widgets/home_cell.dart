@@ -20,6 +20,7 @@ class _HomeCellState extends State<HomeCell> {
   Goods goods;
   @override
   Widget build(BuildContext context) {
+    //print("goods:${goods.toJson()}");
     return Padding(
         padding: EdgeInsets.only(top: 8, left: 24),
         child: Column(

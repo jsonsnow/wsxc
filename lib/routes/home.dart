@@ -30,7 +30,7 @@ class _HomeRouterState extends State<HomeRouter> {
     return InfiniteListView<Goods>(
         onRetrieveData: (int page, List<Goods> items, bool refresh) async {
       var goods = await fetchHomeData(refresh);
-      print('goods:$goods');
+      //print('goods:$goods');
       items.addAll(goods);
       return goods.length > 0 ? true : false;
     }, itemBuilder: (List list, int index, BuildContext ctx) {
@@ -44,7 +44,10 @@ class _HomeRouterState extends State<HomeRouter> {
     var items = r['result']['items'] as List;
     //print('items $items');
     return items.map((e) {
-      return Goods.fromJson(e);
+      //print('item data: $e');
+      Goods good = Goods.fromJson(e);
+      print(good.user_icon);
+      return good;
     }).toList();
   }
 }
