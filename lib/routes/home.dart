@@ -46,7 +46,7 @@ class _HomeRouterState extends State<HomeRouter> {
     return items.map((e) {
       //print('item data: $e');
       Goods good = Goods.fromJson(e);
-      print(good.user_icon);
+      //print(good.user_icon);
       return good;
     }).toList();
   }

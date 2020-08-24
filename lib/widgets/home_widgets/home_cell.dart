@@ -7,43 +7,49 @@ import 'package:wsxc/widgets/home_widgets/goods_remark.dart';
 import 'package:wsxc/widgets/home_widgets/home_cell_user.dart';
 
 class HomeCell extends StatefulWidget {
-  HomeCell(this.goods);
+  HomeCell(this.goods) : super(key: ValueKey(goods.goods_id));
   @override
   State<StatefulWidget> createState() {
-    return _HomeCellState();
+    return _HomeCellState(this.goods);
   }
 
   final Goods goods;
 }
 
 class _HomeCellState extends State<HomeCell> {
+  _HomeCellState(this.goods);
   Goods goods;
   @override
   Widget build(BuildContext context) {
-    //print("goods:${goods.toJson()}");
+    print("goods:${goods.toJson()}");
     return Padding(
-        padding: EdgeInsets.only(top: 8, left: 24),
-        child: Column(
-          children: [
-            HomeCellUserWidget(goods: goods),
-            // Container(
-            //   padding: EdgeInsets.fromLTRB(120, 20, 20, 15),
-            //   child: Column(
-            //     children: [
-            //       ExpandabelText(
-            //         text: goods.title ?? '',
-            //         maxLinex: 5,
-            //       ),
-            //       goods.imgs.length > 0
-            //           ? CLFlow(
-            //               count: goods.imgs.length,
-            //               children: goods.imgs.map((e) => gmAvatar(e)))
-            //           : null,
-            //       GoodsRemarkWidget(goods: goods)
-            //     ],
-            //   ),
-            // )
-          ],
-        ));
+      padding: EdgeInsets.only(top: 8, left: 24),
+      child: Column(
+        children: [
+          HomeCellUserWidget(goods: goods),
+          Container(
+              //padding: EdgeInsets.fromLTRB(33, 20, 20, 15),
+              child: Builder(
+            builder: (context) {
+              var children = <Widget>[];
+              var title = ExpandabelText(
+                text: goods.title ?? '',
+                maxLinex: 5,
+              );
+              children.add(title);
+              if (goods.imgs.length > 0) {
+                children.add(
+                  CLFlow(
+                    count: goods.imgs.length,
+                    children: goods.imgs.map((e) => gmAvatar(e)).toList(),
+                  ),
+                );
+              }
+              return Column(children: children);
+            },
+          ))
+        ],
+      ),
+    );
   }
 }

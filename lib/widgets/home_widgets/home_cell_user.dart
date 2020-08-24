@@ -15,6 +15,8 @@ class HomeCellUserWidget extends StatelessWidget {
           padding: EdgeInsets.only(left: 18),
           child: gmAvatar(
             goods.user_icon,
+            width: 50,
+            borderRadius: BorderRadius.circular(25),
           ),
         ),
         Padding(
@@ -40,7 +42,7 @@ class HomeCellUserWidget extends StatelessWidget {
                               ],
                             ),
                           )
-                        : null
+                        : Text('')
                   ],
                 ),
               )
