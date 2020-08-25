@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class wsxc_btn extends StatelessWidget {
-  wsxc_btn(this.clickHandle, this.longPressHandle, {this.title, this.style});
+  wsxc_btn(this.clickHandle, this.longPressHandle,
+      {@required this.title,
+      this.style = const TextStyle(fontSize: 11, color: Colors.grey)});
 
   final VoidCallback clickHandle;
   final VoidCallback longPressHandle;

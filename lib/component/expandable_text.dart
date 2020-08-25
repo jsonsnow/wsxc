@@ -46,12 +46,14 @@ class _ExpandabelTextState extends State<ExpandabelText> {
                 ? Text(
                     text ?? '',
                     style: style,
+                    textAlign: TextAlign.left,
                   )
                 : Text(
                     text,
                     maxLines: maxLines,
                     overflow: TextOverflow.ellipsis,
                     style: style,
+                    textAlign: TextAlign.left,
                   ),
             GestureDetector(
               behavior: HitTestBehavior.translucent,
@@ -74,7 +76,11 @@ class _ExpandabelTextState extends State<ExpandabelText> {
           ],
         );
       } else {
-        return Text(text ?? '', style: style);
+        return Text(
+          text ?? '',
+          style: style,
+          textAlign: TextAlign.left,
+        );
       }
     });
   }

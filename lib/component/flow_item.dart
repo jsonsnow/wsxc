@@ -20,7 +20,7 @@ class CLFlow extends StatelessWidget {
 class CLFlowDelegate extends FlowDelegate {
   final int count;
   final double gap;
-  CLFlowDelegate({@required this.count, this.gap = 10.0});
+  CLFlowDelegate({@required this.count, this.gap = 5.0});
 
   var columns = 3;
   var rows = 3;
@@ -99,21 +99,21 @@ class CLFlowDelegate extends FlowDelegate {
 
   getItemSize() {
     if (count == 1) {
-      itemW = 120;
-      itemH = 120;
+      itemW = 100;
+      itemH = 100;
     } else if (count <= 3) {
-      itemW = 80;
-      itemH = 80;
+      itemW = 100;
+      itemH = 100;
     } else if (count <= 6) {
-      itemW = 70;
-      itemH = 70;
+      itemW = 100;
+      itemH = 100;
       if (count == 4) {
-        itemW = 80;
-        itemH = 80;
+        itemW = 100;
+        itemH = 100;
       }
     } else {
-      itemW = 60;
-      itemH = 60;
+      itemW = 100;
+      itemH = 100;
     }
   }
 }

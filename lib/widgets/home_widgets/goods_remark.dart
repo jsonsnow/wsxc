@@ -27,23 +27,25 @@ class GoodsRemarkWidget extends StatelessWidget {
     );
 
     chirldrens.add(divider);
-    if (goods.mark_code.length > 0) {
+    if (goods.mark_code != null && goods.mark_code.length > 0) {
       chirldrens.add(
         Padding(
-          padding: EdgeInsets.only(top: 18),
+          padding: EdgeInsets.only(top: 8),
           child: _buildSearchCode(),
         ),
       );
     }
-    if (goods.tags.length > 0) {
+    print('tags');
+    if (goods.tags != null && goods.tags.length > 0) {
       chirldrens.add(
         Padding(
-          padding: EdgeInsets.only(top: 18),
+          padding: EdgeInsets.only(top: 8),
           child: _buildTags(),
         ),
       );
     }
-    if (goods.priceArr.length > 0) {
+    print('price');
+    if (goods.priceArr != null && goods.priceArr.length > 0) {
       chirldrens.add(
         Padding(
           padding: EdgeInsets.only(top: 8),
@@ -51,32 +53,33 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    if (goods.formats.length > 0) {
-      chirldrens.add(
-        Padding(
-          padding: EdgeInsets.only(top: 18),
-          child: _buildFormats(),
-        ),
-      );
-    }
-
-    if (goods.colors.length > 0) {
-      chirldrens.add(
-        Padding(
-          padding: EdgeInsets.only(top: 18),
-          child: _buildColors(),
-        ),
-      );
-    }
-
-    if (goods.noteArr.length > 0) {
-      chirldrens.add(
-        Padding(
-          padding: EdgeInsets.only(top: 5, bottom: 8),
-          child: _buildNotes(),
-        ),
-      );
-    }
+    // print('formats');
+    // if (goods.formats != null && goods.formats.length > 0) {
+    //   chirldrens.add(
+    //     Padding(
+    //       padding: EdgeInsets.only(top: 8),
+    //       child: _buildFormats(),
+    //     ),
+    //   );
+    // }
+    // print('colors');
+    // if (goods.colors.length > 0) {
+    //   chirldrens.add(
+    //     Padding(
+    //       padding: EdgeInsets.only(top: 18),
+    //       child: _buildColors(),
+    //     ),
+    //   );
+    // }
+    // print('noteArr');
+    // if (goods.noteArr.length > 0) {
+    //   chirldrens.add(
+    //     Padding(
+    //       padding: EdgeInsets.only(top: 5, bottom: 8),
+    //       child: _buildNotes(),
+    //     ),
+    //   );
+    // }
     return chirldrens;
   }
 
@@ -108,7 +111,12 @@ class GoodsRemarkWidget extends StatelessWidget {
         return IconTextBtnWidget(string: tag.tagName);
       }).toList(),
     );
-    return Wrap(spacing: 8, runSpacing: 12, children: childrens);
+    return Wrap(
+      spacing: 8,
+      runSpacing: 12,
+      children: childrens,
+      direction: Axis.horizontal,
+    );
   }
 
   Widget _buildPrices() {

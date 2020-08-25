@@ -21,33 +21,41 @@ class _HomeCellState extends State<HomeCell> {
   Goods goods;
   @override
   Widget build(BuildContext context) {
-    print("goods:${goods.toJson()}");
+    //print("goods:${goods.toJson()}");
     return Padding(
-      padding: EdgeInsets.only(top: 8, left: 24),
+      padding: EdgeInsets.only(top: 8, left: 20),
       child: Column(
         children: [
           HomeCellUserWidget(goods: goods),
           Container(
-              //padding: EdgeInsets.fromLTRB(33, 20, 20, 15),
-              child: Builder(
-            builder: (context) {
-              var children = <Widget>[];
-              var title = ExpandabelText(
-                text: goods.title ?? '',
-                maxLinex: 5,
-              );
-              children.add(title);
-              if (goods.imgs.length > 0) {
-                children.add(
-                  CLFlow(
-                    count: goods.imgs.length,
-                    children: goods.imgs.map((e) => gmAvatar(e)).toList(),
-                  ),
+            padding: EdgeInsets.fromLTRB(60, 5, 20, 15),
+            child: Builder(
+              builder: (context) {
+                var children = <Widget>[];
+                var title = ExpandabelText(
+                  text: goods.title ?? '',
+                  maxLinex: 5,
+                  style: TextStyle(color: Colors.black, fontSize: 13),
                 );
-              }
-              return Column(children: children);
-            },
-          ))
+                children.add(title);
+                if (goods.imgs.length > 0) {
+                  children.add(Padding(
+                    padding: EdgeInsets.only(top: 5),
+                    child: CLFlow(
+                      count: goods.imgs.length,
+                      children: goods.imgs.map((e) => gmAvatar(e)).toList(),
+                    ),
+                  ));
+                }
+                children.add(GoodsRemarkWidget(goods: goods));
+                return Column(
+                  children: children,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                );
+              },
+            ),
+          ),
+          Divider()
         ],
       ),
     );

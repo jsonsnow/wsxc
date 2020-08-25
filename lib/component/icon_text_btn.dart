@@ -17,24 +17,29 @@ class IconTextBtnWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //var width = string
     return GestureDetector(
       onTap: this.clickHandle,
       child: Container(
-        decoration: BoxDecoration(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(height / 2)),
-            border: Border.all(width: 1, color: Colors.grey)),
-        padding: EdgeInsets.fromLTRB(15, 3, 15, 3),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            image != null ? image : null,
-            Text(
+            border: Border.all(width: 1, color: Colors.grey),
+          ),
+          constraints: BoxConstraints(minHeight: 20, maxWidth: 40),
+          padding: EdgeInsets.fromLTRB(8, 3, 8, 3),
+          child: Builder(builder: (context) {
+            var children = <Widget>[];
+            if (image != null) {
+              children.add(image);
+            }
+            children.add(Text(
               string,
               style: style,
-            )
-          ],
-        ),
-      ),
+            ));
+            return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: children);
+          })),
     );
   }
 }
