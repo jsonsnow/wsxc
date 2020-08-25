@@ -62,4 +62,13 @@ class Goods {
     String from = this.from["label"] as String;
     return from;
   }
+
+  String publishDate() {
+    DateTime date = DateTime.fromMicrosecondsSinceEpoch(time_stamp);
+    var today = date.day;
+    var houre = date.hour;
+    var seconds = date.second;
+    DateTime cur = DateTime.now();
+    return '今天';
+  }
 }

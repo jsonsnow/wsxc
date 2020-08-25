@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wsxc/common/funs.dart';
 import 'package:wsxc/component/icon_text_btn.dart';
 import 'package:wsxc/models/index.dart';
 
@@ -9,7 +10,11 @@ class GoodsRemarkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 8),
-      child: Column(children: _build()),
+      child: Column(
+        children: _build(),
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+      ),
     );
   }
 
@@ -17,12 +22,22 @@ class GoodsRemarkWidget extends StatelessWidget {
     var chirldrens = <Widget>[];
     var divider = Row(
       children: [
-        Divider(),
-        Text(
-          '商品属性',
-          style: TextStyle(color: Colors.grey, fontSize: 12),
+        Expanded(
+          child: Divider(),
+          flex: 2,
         ),
-        Divider()
+        Expanded(
+          child: Text(
+            '商品属性',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.grey, fontSize: 12),
+          ),
+          flex: 1,
+        ),
+        Expanded(
+          child: Divider(),
+          flex: 2,
+        ),
       ],
     );
 
@@ -38,8 +53,9 @@ class GoodsRemarkWidget extends StatelessWidget {
     print('tags');
     if (goods.tags != null && goods.tags.length > 0) {
       chirldrens.add(
-        Padding(
-          padding: EdgeInsets.only(top: 8),
+        Container(
+          //decoration: BoxDecoration(color: Colors.red),
+          padding: EdgeInsets.only(top: 8, left: 0),
           child: _buildTags(),
         ),
       );
@@ -53,33 +69,33 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    // print('formats');
-    // if (goods.formats != null && goods.formats.length > 0) {
-    //   chirldrens.add(
-    //     Padding(
-    //       padding: EdgeInsets.only(top: 8),
-    //       child: _buildFormats(),
-    //     ),
-    //   );
-    // }
-    // print('colors');
-    // if (goods.colors.length > 0) {
-    //   chirldrens.add(
-    //     Padding(
-    //       padding: EdgeInsets.only(top: 18),
-    //       child: _buildColors(),
-    //     ),
-    //   );
-    // }
-    // print('noteArr');
-    // if (goods.noteArr.length > 0) {
-    //   chirldrens.add(
-    //     Padding(
-    //       padding: EdgeInsets.only(top: 5, bottom: 8),
-    //       child: _buildNotes(),
-    //     ),
-    //   );
-    // }
+    print('formats');
+    if (goods.formats != null && goods.formats.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 8),
+          child: _buildFormats(),
+        ),
+      );
+    }
+    print('colors');
+    if (goods.colors != null && goods.colors.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 8),
+          child: _buildColors(),
+        ),
+      );
+    }
+    print('noteArr');
+    if (goods.noteArr != null && goods.noteArr.length > 0) {
+      chirldrens.add(
+        Padding(
+          padding: EdgeInsets.only(top: 5, bottom: 8),
+          child: _buildNotes(),
+        ),
+      );
+    }
     return chirldrens;
   }
 
@@ -88,9 +104,9 @@ class GoodsRemarkWidget extends StatelessWidget {
       style: TextStyle(color: Colors.grey, fontSize: 12),
       child: Row(
         children: [
-          Text('搜索码'),
+          Text('搜索码：'),
           Padding(
-            padding: EdgeInsets.only(left: 12),
+            padding: EdgeInsets.only(left: 0),
             child: Text(goods.mark_code),
           )
         ],
@@ -102,7 +118,7 @@ class GoodsRemarkWidget extends StatelessWidget {
     var childrens = <Widget>[];
     childrens.add(
       Text(
-        '标签：',
+        '标签:',
         style: TextStyle(color: Colors.grey, fontSize: 12),
       ),
     );
@@ -112,17 +128,21 @@ class GoodsRemarkWidget extends StatelessWidget {
       }).toList(),
     );
     return Wrap(
-      spacing: 8,
-      runSpacing: 12,
-      children: childrens,
+      spacing: 5,
+      runSpacing: 5,
+      alignment: WrapAlignment.start,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      textDirection: TextDirection.ltr,
       direction: Axis.horizontal,
+      children: childrens,
     );
   }
 
   Widget _buildPrices() {
     return Wrap(
-      spacing: 8,
-      runSpacing: 12,
+      spacing: 5,
+      runSpacing: 5,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: goods.priceArr.map((price) {
         Image icon;
         if (goods.is_my_album) {
@@ -140,47 +160,74 @@ class GoodsRemarkWidget extends StatelessWidget {
     var childrens = <Widget>[];
     childrens.add(
       Text(
-        '规格：',
+        '规格:',
         style: TextStyle(color: Colors.grey, fontSize: 12),
       ),
     );
     childrens.addAll(goods.formats.map((format) {
       return IconTextBtnWidget(string: format["formatName"]);
     }).toList());
-    return Wrap(spacing: 8, runSpacing: 12, children: childrens);
+    return Wrap(
+      spacing: 5,
+      runSpacing: 5,
+      alignment: WrapAlignment.start,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      textDirection: TextDirection.ltr,
+      direction: Axis.horizontal,
+      children: childrens,
+    );
   }
 
   Widget _buildColors() {
     var childrens = <Widget>[];
     childrens.add(
       Text(
-        '规格：',
+        '颜色:',
         style: TextStyle(color: Colors.grey, fontSize: 12),
       ),
     );
     childrens.addAll(goods.colors.map((format) {
       return IconTextBtnWidget(string: format["formatName"]);
     }).toList());
-    return Wrap(spacing: 8, runSpacing: 12, children: childrens);
+    return Wrap(
+      spacing: 5,
+      runSpacing: 5,
+      alignment: WrapAlignment.start,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      textDirection: TextDirection.ltr,
+      direction: Axis.horizontal,
+      children: childrens,
+    );
   }
 
   Widget _buildNotes() {
     var array = goods.noteArr.map((note) {
       return Container(
-        padding: EdgeInsets.fromLTRB(15, 3, 15, 3),
+        padding: EdgeInsets.fromLTRB(10, 3, 15, 3),
         height: 20,
-        decoration: BoxDecoration(color: Colors.grey),
-        child: Row(
-          children: [
-            goods.is_my_album ? permissionIcon(note.permission) : null,
+        decoration: BoxDecoration(color: HexColor.fromHex("EFEFF4")),
+        child: Builder(builder: (context) {
+          var children = <Widget>[];
+          if (goods.is_my_album) {
+            children.add(
+              Padding(
+                padding: EdgeInsets.only(right: 5),
+                child: permissionIcon(note.permission),
+              ),
+            );
+          }
+          children.add(
             Expanded(
               child: Text(
                 note.value,
-                style: TextStyle(fontSize: 9, color: Colors.grey),
+                style: TextStyle(fontSize: 11, color: Colors.grey),
               ),
-            )
-          ],
-        ),
+            ),
+          );
+          return Row(
+            children: children,
+          );
+        }),
       );
     }).toList();
     return Wrap(
@@ -191,13 +238,13 @@ class GoodsRemarkWidget extends StatelessWidget {
 
   Image permissionIcon(num permission) {
     if (permission.toInt() == 0) {
-      return Image.asset('price_public_icon');
+      return Image.asset('imgs/2.0x/price_public_icon.png', scale: 2);
     } else if (permission.toInt() == 1) {
-      return Image.asset('price_private_icon');
+      return Image.asset('imgs/2.0x/price_private_icon.png', scale: 2);
     } else if (permission.toInt() == 2) {
-      return Image.asset('price_group_icon');
+      return Image.asset('imgs/2.0x/price_group_icon.png', scale: 2);
     } else {
-      return Image.asset('price_group_icon');
+      return Image.asset('imgs/2.0x/price_group_icon.png', scale: 2);
     }
   }
 }
