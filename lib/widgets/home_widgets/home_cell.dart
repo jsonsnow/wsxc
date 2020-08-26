@@ -30,15 +30,17 @@ class _HomeCellState extends State<HomeCell> {
         children: [
           HomeCellUserWidget(goods: goods),
           Container(
-            padding: EdgeInsets.fromLTRB(60, 5, 20, 15),
+            padding: EdgeInsets.fromLTRB(60, 5, 20, 10),
             child: Builder(
               builder: (context) {
                 var children = <Widget>[];
-                var title = ExpandabelText(
-                  text: goods.title ?? '',
-                  maxLinex: 5,
-                  style: TextStyle(color: Colors.black, fontSize: 13),
-                );
+                var title = Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: ExpandabelText(
+                      text: goods.title ?? '',
+                      maxLinex: 5,
+                      style: TextStyle(color: Colors.black, fontSize: 13),
+                    ));
                 children.add(title);
                 if (goods.imgs.length > 0) {
                   children.add(Padding(

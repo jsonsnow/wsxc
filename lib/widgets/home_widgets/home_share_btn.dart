@@ -22,7 +22,7 @@ class ShareBtnWidget extends StatelessWidget {
         color: HexColor.fromHex("64CE61"),
       ),
     )));
-    if (goods.showCart && goods.showCart) {
+    if (goods.showAddCart != null && goods.showAddCart) {
       children.add(Padding(
         padding: EdgeInsets.only(left: 15),
         child: Icon(

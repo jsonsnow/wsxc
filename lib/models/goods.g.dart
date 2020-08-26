@@ -54,7 +54,7 @@ Goods _$GoodsFromJson(Map<String, dynamic> json) {
         ?.toList()
     ..time = json['time'] as String
     ..imgsSrc = json['imgsSrc'] as List
-    ..showCart = json['showCart'] as bool
+    ..showAddCart = json['showAddCart'] as bool
     ..old_time = json['old_time'] as String;
 }
 
@@ -97,5 +97,5 @@ Map<String, dynamic> _$GoodsToJson(Goods instance) => <String, dynamic>{
       'time': instance.time,
       'imgsSrc': instance.imgsSrc,
       'old_time': instance.old_time,
-      'showCart': instance.showCart
+      'showAddCart': instance.showAddCart
     };

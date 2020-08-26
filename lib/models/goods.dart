@@ -46,7 +46,7 @@ class Goods {
   String time;
   List imgsSrc;
   String old_time;
-  bool showCart;
+  bool showAddCart;
 
   factory Goods.fromJson(Map<String, dynamic> json) => _$GoodsFromJson(json);
   Map<String, dynamic> toJson() => _$GoodsToJson(this);

@@ -50,7 +50,6 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    print('tags');
     if (goods.tags != null && goods.tags.length > 0) {
       chirldrens.add(
         Container(
@@ -60,7 +59,6 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    print('price');
     if (goods.priceArr != null && goods.priceArr.length > 0) {
       chirldrens.add(
         Padding(
@@ -69,7 +67,6 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    print('formats');
     if (goods.formats != null && goods.formats.length > 0) {
       chirldrens.add(
         Padding(
@@ -78,7 +75,6 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    print('colors');
     if (goods.colors != null && goods.colors.length > 0) {
       chirldrens.add(
         Padding(
@@ -87,8 +83,6 @@ class GoodsRemarkWidget extends StatelessWidget {
         ),
       );
     }
-    print('noteArr');
-
     if (goods.noteArr != null && goods.noteArr.length > 0) {
       chirldrens.add(
         Padding(

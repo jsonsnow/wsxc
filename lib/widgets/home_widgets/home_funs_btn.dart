@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:wsxc/common/funs.dart';
 import 'package:wsxc/component/btn.dart';
