@@ -5,6 +5,8 @@ import 'package:wsxc/component/flow_item.dart';
 import 'package:wsxc/models/index.dart';
 import 'package:wsxc/widgets/home_widgets/goods_remark.dart';
 import 'package:wsxc/widgets/home_widgets/home_cell_user.dart';
+import 'package:wsxc/widgets/home_widgets/home_funs_btn.dart';
+import 'package:wsxc/widgets/home_widgets/home_share_btn.dart';
 
 class HomeCell extends StatefulWidget {
   HomeCell(this.goods) : super(key: ValueKey(goods.goods_id));
@@ -48,6 +50,18 @@ class _HomeCellState extends State<HomeCell> {
                   ));
                 }
                 children.add(GoodsRemarkWidget(goods: goods));
+                children.add(
+                  Padding(
+                    padding: EdgeInsets.only(top: 5),
+                    child: HomeFunsWidget(goods: goods),
+                  ),
+                );
+                children.add(Padding(
+                  padding: EdgeInsets.only(top: 8),
+                  child: ShareBtnWidget(
+                    goods: goods,
+                  ),
+                ));
                 return Column(
                   children: children,
                   crossAxisAlignment: CrossAxisAlignment.start,

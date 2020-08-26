@@ -88,6 +88,7 @@ class GoodsRemarkWidget extends StatelessWidget {
       );
     }
     print('noteArr');
+
     if (goods.noteArr != null && goods.noteArr.length > 0) {
       chirldrens.add(
         Padding(

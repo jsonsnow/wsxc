@@ -58,6 +58,7 @@
     "subimgs":[
 
     ],
+    "showCart": true,
     "priceArr":"$[]price",
     "noteArr":"$[]goodsNote",
     "tags":"$[]goodTags",
