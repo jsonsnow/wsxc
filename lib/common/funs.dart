@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 Widget gmAvatar(String url,
     {Image plcaeholder,
-    double width = 30,
+    double width,
     double height,
     BoxFit fit,
     BorderRadius borderRadius}) {
@@ -16,7 +16,7 @@ Widget gmAvatar(String url,
     return ClipRRect(
       borderRadius: borderRadius ?? BorderRadius.circular(2),
       child: CachedNetworkImage(
-        imageUrl: url,
+        imageUrl: url ?? "",
         width: width,
         height: height,
         fit: fit ?? BoxFit.cover,
