@@ -62,7 +62,6 @@ class _HomeRouterState extends State<HomeRouter> {
     //print('result :$r');
     var items = r['result']['items'] as List;
     album = r['result']['album'];
-    print('album:$album');
     //print('items $items');
     return items.map((e) {
       //print('item data: $e');
